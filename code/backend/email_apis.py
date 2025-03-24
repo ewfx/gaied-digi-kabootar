@@ -38,4 +38,4 @@ def categorize_email():
     return jsonify(classification_result_serializable)
 
 if __name__ == '__main__':
-    app.run(debug=True)v
+    app.run(debug=True)
