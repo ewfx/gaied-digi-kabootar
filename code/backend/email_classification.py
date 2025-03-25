@@ -1,4 +1,5 @@
 import email
+from flask import jsonify
 import numpy as np
 import pandas as pd
 import pdfplumber
@@ -14,18 +15,8 @@ from email_sentimentAnalysis import analyze_text
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from preprocess_email import clean_email_text
-
-# Load Excel file with predefined categories
-category_file = "C:/Users/Vaishali/AIML_POC/email_automation/Loan_Servicing_Requests.xlsx"
-df_categories = pd.read_excel(category_file)
-
-# Convert to dictionary {Request Type: [Keywords]}
-category_mapping = {}
-for _, row in df_categories.iterrows():
-    category_mapping[row["Request Type"]] = {
-        "Sub Request Type": row["Subrequest Type"],
-        "Keywords": row["Keywords in Email"].split(", ")  # Assuming keywords are comma-separated
-    }
+from service_request_data import extract_email_headers
+from email_duplicate import is_duplicate_email
 
 # print(category_mapping)
 
@@ -66,19 +57,6 @@ def extract_text_from_eml(eml_path):
         else:
             return msg.get_payload(decode=True).decode()
 
-# Read all files in the folder
-email_texts = {}
-for email_file in os.listdir(email_folder):
-    file_path = os.path.join(email_folder, email_file)
-    if email_file.endswith(".pdf"):
-        email_texts[email_file] = extract_text_from_pdf(file_path)
-    elif email_file.endswith(".docx"):
-        email_texts[email_file] = extract_text_from_docx(file_path)
-    elif email_file.endswith(".doc"):
-        email_texts[email_file] = extract_text_from_doc(file_path)
-    elif email_file.endswith(".eml"):
-        email_texts[email_file] = extract_text_from_eml(file_path)
-
 # print(email_texts)
 
 # Load BERT model and tokenizer for embeddings
@@ -96,6 +74,18 @@ def generate_summary(email_text, num_sentences=3):
     return summary
 
 def classify_email(email_text):
+    # Load Excel file with predefined categories
+    category_file = "C:/Users/Vaishali/AIML_POC/email_automation/Loan_Servicing_Requests.xlsx"
+    df_categories = pd.read_excel(category_file)
+
+    # Convert to dictionary {Request Type: [Keywords]}
+    category_mapping = {}
+    for _, row in df_categories.iterrows():
+        category_mapping[row["Request Type"]] = {
+            "Sub Request Type": row["Subrequest Type"],
+            "Keywords": row["Keywords in Email"].split(", ")  # Assuming keywords are comma-separated
+        }
+
     labels = list(category_mapping.keys())
     
     # Generate embeddings for email text and category labels
@@ -124,15 +114,52 @@ def classify_email(email_text):
         "Reason": reason
     }
 
-# Process all emails
-classified_results = {}
-for file, text in email_texts.items():
-    cleanedText = clean_email_text(text)
+def email_classification(email_folder):
+     # Read all files in the folder
+    email_texts = {}
+    for email_file in os.listdir(email_folder):
+        file_path = os.path.join(email_folder, email_file)
+        if email_file.endswith(".pdf"):
+            email_texts[email_file] = extract_text_from_pdf(file_path)
+        elif email_file.endswith(".docx"):
+            email_texts[email_file] = extract_text_from_docx(file_path)
+        elif email_file.endswith(".doc"):
+            email_texts[email_file] = extract_text_from_doc(file_path)
+        elif email_file.endswith(".eml"):
+            email_texts[email_file] = extract_text_from_eml(file_path)        
 
-    sentiment_result, keywords_result = analyze_text(cleanedText)
-    classified_results[file] = classify_email(" ".join(keywords_result))
+    # Initialize a set to store hashes of seen emails
+    seen_hashes = {}
 
-# Convert classified_results to JSON serializable format
-classified_results_serializable = {k: {key: (float(f"{val:.2f}") if isinstance(val, np.float32) else val) for key, val in v.items()} for k, v in classified_results.items()}
+    # Process all emails
+    classified_results = {}
+    for file, text in email_texts.items():
+        # Extract headers
+        headers = extract_email_headers(text)
+        # Check for duplicates
+        is_duplicate, duplicate_file = is_duplicate_email(text, seen_hashes, file)
+        if is_duplicate:
+            print(f"Duplicate email detected: {file}, duplicate of: {duplicate_file}")
+            classified_results[file] = {
+                "duplicateIndicator": True,
+                "Confidence Score": 100.0,
+                "Reason": f"Duplicate email detected. This email is a duplicate of {duplicate_file}.",
+                "Headers": headers
+            }
+            continue  # Skip processing this email if it's a dupli
 
-print(json.dumps(classified_results_serializable, indent=4))
+        cleanedText = clean_email_text(text)
+
+        sentiment_result, keywords_result = analyze_text(cleanedText)
+        # classified_results["duplicateIndicator"] = False  # Mark as not a duplicate
+        # classified_results["Headers"] = headers  # Include extracted headers
+        # Merge headers with the classification result
+        classification_result = classify_email(" ".join(keywords_result))
+        classification_result["Headers"] = headers  # Add headers to the classification result
+        classification_result["duplicateIndicator"] = False 
+        classified_results[file] = classification_result
+
+    # Convert classified_results to JSON serializable format
+    classified_results_serializable = {k: {key: (float(f"{val:.2f}") if isinstance(val, np.float32) else val) for key, val in v.items()} for k, v in classified_results.items()}
+
+    return jsonify(classified_results_serializable)
