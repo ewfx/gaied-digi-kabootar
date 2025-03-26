@@ -72,4 +72,4 @@ Describe the major technical or non-technical challenges your team encountered.
 - **Vaishali Agarwal** - [GitHub](#) | [LinkedIn](#)
 - **Maehul Kumar**
 - **Guddy Kumari**
-- **Niraj Kumar Dewangan** - [GitHub](https://github.com/nirajdewangan) | [LinkedIn](https://www.linkedin.com/in/niraj-kumar-dewangan/)
+- **Niraj Devangan**
