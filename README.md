@@ -17,6 +17,7 @@
 A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
 
 ## 🎥 Demo
+Video and screenshot are provided in gaied-digi-kabootar/demo folder
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
