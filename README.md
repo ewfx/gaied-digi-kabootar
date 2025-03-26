@@ -14,7 +14,10 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+**Inbox Overload? Let AI Take the Loan!**
+
+Loan servicing emails pile up fast—but why sort them manually? A smart classification model cuts through the clutter, sorting messages faster than a banker counts interest. Quicker replies, happier borrowers, and a workflow smoother than a refinanced mortgage. Let’s get classified!
+
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -24,28 +27,50 @@ A brief overview of your project and its purpose. Mention which problem statemen
 ![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
-Solving this problem of email classification will help in efficiency, compliance, and resolve customer experience challenges. Key reasons that motivated us:
 
-1. High Volume of Emails – Loan servicing companies receive thousands of emails daily, making it difficult to process them manually. Automating classification helps manage this workload efficiently.
+**Why Automate Email Classification?**
 
-2. Regulatory Compliance – Loan servicing is highly regulated, and misclassifying or overlooking critical emails (e.g., borrower disputes, payment issues) can lead to compliance risks and penalties.
+Loan servicing emails pour in daily—too many to sort manually without delays and risks. Here’s why automation is a game-changer:
 
-3. Improving Response Time – Quick responses to customer queries will improve customer satisfaction and reduce frustration.
+**1. Handle High Volumes with Ease**– AI sorts thousands of emails faster than you can hit “mark as unread.”
 
-4. Reducing Operational Costs – Automating email classification reduces the need for manual sorting, freeing up employees to focus on higher-value tasks.
 
-5. Minimizing Errors – Manual email handling can lead to misrouting, delayed responses, or lost emails. An intelligent classification system improves accuracy and ensures emails are addressed correctly.
+**2. Stay Compliant** – Misclassifications can be costly; automation helps keep everything in check.
 
-6. Enhancing Decision-Making – A well-structured classification system provides insights into common borrower concerns, enabling better resource allocation and proactive issue resolution.
+
+**3. Speed Up Responses** – Faster replies mean happier borrowers (and fewer follow-ups).
+
+
+**4. Cut Costs, Boost Productivity** – Let employees focus on work that actually needs a human touch.
+
+
+**5. Reduce Errors** – No more misrouted or overlooked emails—just smooth operations.
+
+
+**6. Turn Data into Decisions** – Understand borrower concerns before they escalate.
+
+With automation, we’re streamlining workflows, ensuring compliance, and improving the borrower experience — one smartly sorted email at a time.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+With a structured approach, we transform email chaos into clear, actionable insights. Let's dig in to see what our solution does.
+
+**1. Data Collection** – Gather emails in all shapes and formats—because inboxes are anything but uniform.
+
+**2. Rule-Based Classification** – Use predefined rules to sort emails into request types and subcategories—like an AI-powered filing assistant.
+
+**3. Text Preprocessing** – Strip away the fluff (“Regards,” “Sincerely,” and other email formalities) to focus on what really matters.
+
+**4. Tokenization**– Break the text into individual words or “tokens” for analysis—think of it as turning a paragraph into puzzle pieces.
+
+**5. Sentiment Analysis** – Measure how closely the email content matches predefined request-type rules using cosine similarity.
+
+**6. Confidence Score Calculation**– Assign a confidence score based on similarity, ensuring accurate classification before taking action.
 
 ## 🛠️ How We Built It
 Briefly outline the technologies, frameworks, and tools used in development.
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+
 
 ## 🏃 How to Run
 1. Clone the repository  
@@ -62,14 +87,14 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
+- 🔹 Frontend: React
 - 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Database: N/A
+- 🔹 Other:
 
 ## 👥 Team
 - **Shreema S Ajila** - [GitHub](#) | [LinkedIn](#)
 - **Vaishali Agarwal** - [GitHub](#) | [LinkedIn](#)
 - **Maehul Kumar**
 - **Guddy Kumari**
-- **Niraj Devangan**
+- **Niraj Dewangan**
