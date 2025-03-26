@@ -21,8 +21,7 @@ Loan servicing emails pile up fast—but why sort them manually? A smart classif
 
 ## 🎥 Demo
 Video and screenshot are provided in gaied-digi-kabootar/demo folder
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](#DigiKabootar_Demo_Video.zip)
 🖼️ Screenshots:
 
 ![Screenshot 1](link-to-image)
