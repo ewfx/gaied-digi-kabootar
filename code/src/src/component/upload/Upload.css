@@ -1,0 +1,157 @@
+/* Container */
+.upload-container {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    max-width: 85%;
+    margin: 40px auto;
+  }
+  
+  /* Label as button */
+  .upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: #3498db;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .upload-area {
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    max-width: 85%;
+    margin: 40px auto;
+  }
+
+  .upload-area.dragover {
+    background-color: #f1f1f1;
+  }
+
+  .upload-button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .upload-label:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  .upload-label:active {
+    transform: scale(0.95);
+  }
+  
+  /* Hidden input */
+  .upload-input {
+    display: none;
+  }
+  
+  /* File name */
+  .file-name {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* File preview */
+  .file-preview {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image preview */
+  .preview-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Text file preview */
+  .preview-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* File info */
+  .file-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 14px;
+  }
+  
+  .file-info p {
+    margin: 5px 0;
+  }
+  
+  /* Icon */
+  .icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+  }
+
+  /* Loader spinning animation */
+.spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Wrapper for the scrollable table */
+.table-scroll-wrapper {
+    max-height: 300px; /* Set the maximum height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ddd; /* Optional: Add a border around the scrollable area */
+  }
+  
+  /* Optional: Style the table */
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .file-table th,
+  .file-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .file-table th {
+    background-color: #f4f4f4;
+  }
