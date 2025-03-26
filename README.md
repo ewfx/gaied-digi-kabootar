@@ -96,6 +96,6 @@ Briefly outline the technologies, frameworks, and tools used in development.
 ## 👥 Team
 - **Shreema S Ajila** - [GitHub](#) | [LinkedIn](#)
 - **Vaishali Agarwal** - [GitHub](#) | [LinkedIn](#)
-- **Maehul Kumar**
+- **Maehul Kumar** - [GitHub](https://github.com/Maehulkr) | [LinkedIn](https://www.linkedin.com/in/maehul-kumar-719061180)
 - **Guddy Kumari**
 - **Niraj Dewangan**
