@@ -1,4 +1,5 @@
-# 🚀 Project Name
+# 🚀 Project Name: Digi Kabootar
+"Bringing Old-School Trust to New-Age Tech!"
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -20,9 +21,11 @@ Loan servicing emails pile up fast—but why sort them manually? A smart classif
 
 
 ## 🎥 Demo
-Video and screenshot are provided in gaied-digi-kabootar/demo folder
-📹 [Video Demo](#DigiKabootar_Demo_Video.zip)
+📹 Video Demo: https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/DigiKabootar_Demo_Video.zip
 🖼️ Screenshots:
+https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/UI_Screenshot.jpeg
+https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/Backend_Api_Response.jpeg
+
 
 ![Screenshot 1](link-to-image)
 
@@ -93,8 +96,8 @@ Briefly outline the technologies, frameworks, and tools used in development.
 - 🔹 Other:
 
 ## 👥 Team
-- **Shreema S Ajila** - [GitHub](#) | [LinkedIn](#)
-- **Vaishali Agarwal** - [GitHub](#) | [LinkedIn](#)
+- **Shreema S Ajila** - [GitHub](https://github.com/ajilashreema) | [LinkedIn](https://www.linkedin.com/in/shreemaajila)
+- **Vaishali Agarwal** - [GitHub](https://github.com/agarwalVaishali14) | [LinkedIn](#)
 - **Maehul Kumar** - [GitHub](https://github.com/Maehulkr) | [LinkedIn](https://www.linkedin.com/in/maehul-kumar-719061180)
 - **Guddy Kumari**
 - **Niraj Dewangan**
