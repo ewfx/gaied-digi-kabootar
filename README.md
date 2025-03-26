@@ -21,10 +21,11 @@ Loan servicing emails pile up fast—but why sort them manually? A smart classif
 
 
 ## 🎥 Demo
-📹 Video Demo: https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/DigiKabootar_Demo_Video.zip
+📹 Video Demo: https://github.com/ewfx/gaied-digi-kabootar/blob/main/artifacts/demo/DigiKabootar_Demo_Video.zip
+                https://github.com/ewfx/gaied-digi-kabootar/blob/main/artifacts/demo/ScreenRecording_Mix_Dataset.zip
 🖼️ Screenshots:
-https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/UI_Screenshot.jpeg
-https://github.com/ewfx/gaied-digi-kabootar/blob/main/demo/Backend_Api_Response.jpeg
+https://github.com/ewfx/gaied-digi-kabootar/blob/main/artifacts/demo/UI_Screenshot.jpeg
+https://github.com/ewfx/gaied-digi-kabootar/blob/main/artifacts/demo/Backend_apiResponse.jpeg
 
 
 ![Screenshot 1](link-to-image)
@@ -71,9 +72,16 @@ With a structured approach, we transform email chaos into clear, actionable insi
 
 ## 🛠️ How We Built It
 Briefly outline the technologies, frameworks, and tools used in development.
+Problem Definition- How each of the manual tasks can be automated using GenAI without human intervention. 
+Data Preparation - Datsets, Gather Datasets, Rule based Classification, Text preprocessing, Tokenization
+Model selection & Fine tuning - Try out different models to get the precised output 
+API integration - Integrating UI with datasets input to interact with Model build and generate the result
+Evaluating Output - Field extraction, duplicate detection, confidence score
 
 ## 🚧 Challenges We Faced
-
+Finding accurate Datasets - Unstructured Emails, Noisy Data, Class Imbalance, Lack of Labeled Data 
+Selecting the right Model - Overfitting, handling multi label classification(mail trail), getting precised output with free model
+Preprocessing Data - Context understanding, Clean up of huge amount of unwanted data
 
 ## 🏃 How to Run
 1. Clone the repository  
