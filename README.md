@@ -78,26 +78,41 @@ Briefly outline the technologies, frameworks, and tools used in development.
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone :https://github.com/ewfx/gaied-digi-kabootar.git
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   UI - npm install
+   API- pip install -r requirements.txt (for Python)
+   Below pip command need to be install -
+pip install flask_cors
+pip install flask
+pip install re
+pip install numpy
+pip install pandas
+pip install docx
+pip install transformers
+pip install pdfplumber
+pip install sklearn
+pip install nltk
+pip install hashlib
+pip install rake_nltk
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   Frontent run cmd - npm start
+   API run cmd - python email_apis.py
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React
-- 🔹 Backend: Node.js / FastAPI / Django
+- 🔹 Frontend: React,Node.js
+- 🔹 Backend:  Python
 - 🔹 Database: N/A
-- 🔹 Other:
+- 🔹 Other: N/A
 
 ## 👥 Team
 - **Shreema S Ajila** - [GitHub](https://github.com/ajilashreema) | [LinkedIn](https://www.linkedin.com/in/shreemaajila)
-- **Vaishali Agarwal** - [GitHub](https://github.com/agarwalVaishali14) | [LinkedIn](#)
+- **Vaishali Agarwal** - [GitHub](https://github.com/agarwalVaishali14) | [LinkedIn](https://www.linkedin.com/in/vaishali14)
 - **Maehul Kumar** - [GitHub](https://github.com/Maehulkr) | [LinkedIn](https://www.linkedin.com/in/maehul-kumar-719061180)
-- **Guddy Kumari**
-- **Niraj Dewangan**
+- **Guddy Kumari** - [GitHub](https://github.com/guddyp) | [LinkedIn](https://www.linkedin.com/in/guddy-kumari-5069b823/)
+- **Niraj Dewangan** - [GitHub](https://github.com/nirajdewangan) | [LinkedIn](https://www.linkedin.com/in/niraj-kumar-dewangan/)
