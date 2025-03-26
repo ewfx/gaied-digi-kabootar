@@ -45,17 +45,45 @@ def extract_text_from_doc(doc_path):
     word.Quit()
     return text
 
+import email
+
 def extract_text_from_eml(eml_path):
-    with open(eml_path, 'rb') as f:
-        msg = email.message_from_binary_file(f)
+    """
+    Extract the text content from an .eml file.
+
+    Args:
+        eml_path (str): The path to the .eml file.
+
+    Returns:
+        str: The extracted text content of the email.
+    """
+    try:
+        with open(eml_path, 'rb') as f:
+            msg = email.message_from_binary_file(f)
+
+        # Check if the email is multipart
         if msg.is_multipart():
             for part in msg.walk():
                 content_type = part.get_content_type()
                 content_disposition = str(part.get("Content-Disposition"))
-                if "attachment" not in content_disposition:
-                    return part.get_payload(decode=True).decode()
+
+                # Skip attachments and only process text/plain or text/html parts
+                if "attachment" not in content_disposition and content_type in ["text/plain", "text/html"]:
+                    payload = part.get_payload(decode=True)
+                    if payload:
+                        return payload.decode(errors='ignore')  # Decode with error handling
         else:
-            return msg.get_payload(decode=True).decode()
+            # If not multipart, decode the payload directly
+            payload = msg.get_payload(decode=True)
+            if payload:
+                return payload.decode(errors='ignore')  # Decode with error handling
+
+        # If no valid payload is found, return an empty string
+        return ""
+
+    except Exception as e:
+        print(f"Error extracting text from .eml file: {e}")
+        return ""
 
 # print(email_texts)
 
