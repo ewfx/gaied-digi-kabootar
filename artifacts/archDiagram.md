@@ -12,8 +12,8 @@ graph TD
     E -->|Convert to Numerical Data 🔠| F[🧠 ML Classifier];
     F -->|Classify Email 🏷️| G[🏷️ Categorized Email];
     
-    G -->|Forward to Loan System 📬| H[💾 Loan System Actions];
-    H -->|Store & Process 💾| I[📂 Loan Database];
+    G -->|Forward to Service System 📬| H[💾 Service Request Actions];
+    H -->|Store & Process 💾| I[📂 Service Request Database];
 
     %% Subsections for Clarity
     subgraph "📡 Email Processing Server"
@@ -24,7 +24,7 @@ graph TD
       F;
     end
 
-    subgraph "🏦 Loan Servicing System"
+    subgraph "🛠️ Service Request System"
       H;
       I;
     end
